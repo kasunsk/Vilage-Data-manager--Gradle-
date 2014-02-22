@@ -3,21 +3,18 @@ package com.kasun.daos;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-//import com.mysql.jdbc.Statement;
-
+import com.kasun.datas.Home;
+import com.kasun.datas.Persion;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import com.kasun.datas.Home;
-import com.kasun.datas.Persion;
-import com.kasun.securaty.Security;
 
 import java.io.File;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import com.kasun.securaty.Security;
 
 public class DBCon {
 
@@ -301,5 +298,38 @@ public class DBCon {
         st.executeUpdate(sql);
         log.info("delHomedetails Quary Exececuted");
         closeConnection();
+    }
+
+    public List<Persion> getAllPerson() throws Exception {
+
+        createConnecction();
+        java.sql.Statement stm = con.createStatement();
+        String sql = "Select * From persion;";
+        ResultSet res = stm.executeQuery(sql);
+        log.info("getAllPerson Quary Exececuted");
+        List<Persion> persionList = new ArrayList<>();
+        while (res.next()) {
+            Persion pers = new Persion(res.getString("ID"), res.getString("Name"), res.getString("Sex"), res.getString("Address"), res.getString("TPNum"), res.getString("Birth_Date"), res.getString("Home_Number"));
+            Persion persion = security.decryptPersion(pers);
+            persionList.add(persion);
+        }
+        closeConnection();
+        return persionList;
+    }
+
+    public List<Home> getAllHome() throws Exception {
+        createConnecction();
+        java.sql.Statement stm = con.createStatement();
+        String sql = "Select * From home;";
+        ResultSet res = stm.executeQuery(sql);
+        log.info("Quary Exececuted");
+        List<Home> customerList = new ArrayList<>();
+        while (res.next()) {
+            Home hme = new Home(res.getString("Home_Number"), res.getString("Owner"), res.getString("Address"), res.getString("TP_Number"), res.getInt("NumberOfMembers"));
+            Home home = security.decryptHome(hme);
+            customerList.add(home);
+        }
+        closeConnection();
+        return customerList;
     }
 }
