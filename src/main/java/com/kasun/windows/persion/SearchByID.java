@@ -91,7 +91,7 @@ public class SearchByID extends javax.swing.JFrame {
         });
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel6.setText("Person Search by ID");
+        jLabel6.setText("Person Search Using ID");
 
         jButton1.setText("Clear");
         jButton1.addActionListener(new java.awt.event.ActionListener() {

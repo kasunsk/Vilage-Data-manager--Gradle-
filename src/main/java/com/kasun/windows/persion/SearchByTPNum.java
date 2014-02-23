@@ -60,7 +60,7 @@ public class SearchByTPNum extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Search BY TPNum");
+        jLabel1.setText("Search Using Mobile");
 
         jButton1.setText("Exit");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -89,7 +89,7 @@ public class SearchByTPNum extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setText("Enter SearchTP Num :");
+        jLabel2.setText("Enter Mobile Number :");
 
         jButton3.setText("Back");
         jButton3.addActionListener(new java.awt.event.ActionListener() {

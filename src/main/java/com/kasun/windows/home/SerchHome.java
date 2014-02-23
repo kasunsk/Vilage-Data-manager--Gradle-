@@ -36,7 +36,7 @@ public class SerchHome extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setText("Search Using  Using Owner Name");
+        jButton3.setText("Search Using Owner Name");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);

@@ -65,7 +65,7 @@ public class SearchByName extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Search By Name");
+        jLabel1.setText("Search Using Name");
 
         btnExit.setText("Exit");
         btnExit.addActionListener(new java.awt.event.ActionListener() {
@@ -94,7 +94,7 @@ public class SearchByName extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setText("Enter SearchTP Name :");
+        jLabel2.setText("Enter Search Persions Name :");
 
         btnBack.setText("Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {

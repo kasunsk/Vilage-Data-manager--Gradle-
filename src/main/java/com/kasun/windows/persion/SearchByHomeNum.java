@@ -62,7 +62,7 @@ public class SearchByHomeNum extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Search BY Home Number");
+        jLabel1.setText("Search Using Home ID Number");
 
         jButton1.setText("Exit");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
