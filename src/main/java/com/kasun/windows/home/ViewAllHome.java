@@ -139,9 +139,14 @@ public class ViewAllHome extends javax.swing.JFrame {
         }
         DefaultTableModel dtm = (DefaultTableModel) customerTable.getModel();
         dtm.setRowCount(0);
+        int i = 0;
         for (Home home : homeList) {
             Object rowData[] = {home.getHoemnumber(), home.getOwner(), home.getAddress(), home.getTpnumber(), home.getNumofmembers()};
             dtm.addRow(rowData);
+            i++;
+        }
+        if(i == 0){
+        	JOptionPane.showMessageDialog(this, "No Any Homes in Database.");
         }
     }//GEN-LAST:event_reloadButtonActionPerformed
 
