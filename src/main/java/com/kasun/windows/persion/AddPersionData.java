@@ -173,48 +173,58 @@ public class AddPersionData extends javax.swing.JFrame {
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
         try {
-
             Logics logic = new Logics();
             Persion persion = new Persion();
 
             persion.setName(TFname.getText());
             persion.setId(TFid.getText());
-            if (TFid.getText().isEmpty() && (persion.getId()).length() != 10) {
+            if (TFid.getText().isEmpty() || (TFid.getText()).length() != 10) {
                 JOptionPane.showMessageDialog(this, "ID number should contain 10 charactor");
             } else {
-                persion.setSex(logic.getSexFromId(TFid.getText()));
-                persion.setAddress(TFaddress.getText());
-                persion.setTpnum(TFtp.getText());
-                persion.setBirthday(logic.getBirthDateUsingId(TFid.getText()));
-                persion.setHomeNumber(TFhomenumber.getText());
 
-                if (persion.getName().isEmpty()) {
-                    JOptionPane.showMessageDialog(this, "Name can not be empty");
-                } else if (persion.getAddress().isEmpty()) {
-                    JOptionPane.showMessageDialog(this, "Please Enter the address");
-                } else if (persion.getHomeNumber().isEmpty()) {
-                    JOptionPane.showMessageDialog(this, "Please Enter the Home Number");
-                } else {
-                    DBCon db = new DBCon();
-                    try {
+                try {
+                    String idStr = (TFid.getText()).substring(0, 10);
+                    int id = Integer.parseInt(idStr);
+                    log.info("Length of ID : " + (TFid.getText()).length());
+                    persion.setSex(logic.getSexFromId(TFid.getText()));
+                    persion.setAddress(TFaddress.getText());
+                    persion.setTpnum(TFtp.getText());
+                    persion.setBirthday(logic.getBirthDateUsingId(TFid.getText()));
+                    persion.setHomeNumber(TFhomenumber.getText());
 
-                        db.addPersionToDatabase(persion);
-                        JOptionPane.showMessageDialog(this, "Added");
-                        TFname.setText("");
-                        TFid.setText("");
-                        TFaddress.setText("");
-                        TFtp.setText("");
-                        TFhomenumber.setText("");
+                    if (persion.getName().isEmpty()) {
+                        JOptionPane.showMessageDialog(this, "Name can not be empty");
+                    } else if (persion.getAddress().isEmpty()) {
+                        JOptionPane.showMessageDialog(this, "Please Enter the address");
+                    } else if (persion.getHomeNumber().isEmpty()) {
+                        JOptionPane.showMessageDialog(this, "Please Enter the Home Number");
+                    } else {
+                        DBCon db = new DBCon();
+                        try {
 
-                    } catch (HeadlessException ex) {
-                        log.error("Error " + ex);
-                        JOptionPane.showMessageDialog(this, "Error...");
+                            db.addPersionToDatabase(persion);
+                            JOptionPane.showMessageDialog(this, "Added");
+                            TFname.setText("");
+                            TFid.setText("");
+                            TFaddress.setText("");
+                            TFtp.setText("");
+                            TFhomenumber.setText("");
+
+                        } catch (HeadlessException e) {
+                            log.error("Error " + e);
+                            JOptionPane.showMessageDialog(this, "Error...");
+
+                        }
                     }
+                } catch (Exception ex) {
+                    log.error("Error " + ex);
+                    JOptionPane.showMessageDialog(this, "Wrong ID Number, Please Check Again.");
                 }
+
             }
         } catch (HeadlessException ex) {
             log.error("Error " + ex);
-            JOptionPane.showMessageDialog(this, "Error");
+            JOptionPane.showMessageDialog(this, "Wrong Input, Please Check Again");
         }
     }//GEN-LAST:event_btnSubmitActionPerformed
 
