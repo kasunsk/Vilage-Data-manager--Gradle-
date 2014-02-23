@@ -1,30 +1,24 @@
 package com.kasun.windows.persion;
 
-import java.awt.HeadlessException;
-
-import javax.swing.JOptionPane;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.kasun.daos.DBCon;
 import com.kasun.datas.Persion;
+import com.kasun.daos.DBCon;
+import java.awt.HeadlessException;
+import javax.swing.JOptionPane;
 import com.kasun.logics.Logics;
 import com.kasun.windows.Selection;
 
 public class AddPersionData extends javax.swing.JFrame {
 
-    /**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	private static final Logger log = LoggerFactory.getLogger(AddPersionData.class);
+    private static final Logger log = LoggerFactory.getLogger(AddPersionData.class);
 
     public AddPersionData() {
         initComponents();
     }
 
-    
+    @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -47,12 +41,16 @@ public class AddPersionData extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(234, 156, 78));
 
+        jLabel1.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         jLabel1.setText("Name");
 
+        jLabel2.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         jLabel2.setText("ID num");
 
+        jLabel4.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         jLabel4.setText("Address");
 
+        jLabel5.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         jLabel5.setText("TP Num");
 
         btnSubmit.setText("Submit");
@@ -84,7 +82,8 @@ public class AddPersionData extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
         jLabel6.setText("Add Persions Datas");
 
-        jLabel7.setText("Home Number");
+        jLabel7.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        jLabel7.setText("Home ID Number");
 
         jButton1.setText("Exit");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
