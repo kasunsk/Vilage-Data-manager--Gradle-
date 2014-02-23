@@ -183,7 +183,8 @@ public class AddPersionData extends javax.swing.JFrame {
             } else {
 
                 try {
-                    String idStr = (TFid.getText()).substring(0, 10);
+                    String idStr = (TFid.getText()).substring(0, 9);
+                    log.info(idStr);
                     int id = Integer.parseInt(idStr);
                     log.info("Length of ID : " + (TFid.getText()).length());
                     persion.setSex(logic.getSexFromId(TFid.getText()));
