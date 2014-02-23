@@ -45,13 +45,13 @@ public class AddPersionData extends javax.swing.JFrame {
         jLabel1.setText("Name");
 
         jLabel2.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
-        jLabel2.setText("ID num");
+        jLabel2.setText("ID Number");
 
         jLabel4.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         jLabel4.setText("Address");
 
         jLabel5.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
-        jLabel5.setText("TP Num");
+        jLabel5.setText("Mobile Number");
 
         btnSubmit.setText("Submit");
         btnSubmit.addActionListener(new java.awt.event.ActionListener() {
