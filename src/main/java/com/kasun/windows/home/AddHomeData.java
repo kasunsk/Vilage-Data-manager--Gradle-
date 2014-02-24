@@ -48,7 +48,7 @@ public class AddHomeData extends javax.swing.JFrame {
 
         jLabel1.setText("Add Home Data");
 
-        jLabel2.setText("Home Number");
+        jLabel2.setText("Home ID Number");
 
         jLabel3.setText("Owner Name");
 
