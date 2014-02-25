@@ -2,13 +2,19 @@ package com.kasun.windows.persion;
 
 import com.kasun.daos.DBCon;
 import com.kasun.datas.Persion;
+
 import java.util.List;
+
 import javax.swing.JOptionPane;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import javax.swing.table.DefaultTableModel;
+
 import com.kasun.windows.Selection;
 
+@SuppressWarnings("serial")
 public class SearchByName extends javax.swing.JFrame {
     
     private static final Logger log = LoggerFactory.getLogger(SearchByName.class);
@@ -17,7 +23,7 @@ public class SearchByName extends javax.swing.JFrame {
         initComponents();
     }
 
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings({ "unchecked" })
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -41,14 +47,16 @@ public class SearchByName extends javax.swing.JFrame {
                 "Name", "ID", "Sex", "Address", "TPNum", "Birth Date"
             }
         ) {
-            Class[] types = new Class [] {
+            @SuppressWarnings("rawtypes")
+			Class[] types = new Class [] {
                 java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false, false, true
             };
 
-            public Class getColumnClass(int columnIndex) {
+            @SuppressWarnings("rawtypes")
+			public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
 
@@ -208,7 +216,7 @@ public class SearchByName extends javax.swing.JFrame {
         try {
             Persion pers=new DBCon().searchPersons(selectedid);
             new Preson(this,true,pers).setVisible(true);
-            this.dispose();
+          //  this.dispose();
         } catch (Exception ex) {
             log.error("Error... "+ex);
             JOptionPane.showMessageDialog(this, "Error");

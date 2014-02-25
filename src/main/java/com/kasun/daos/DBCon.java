@@ -205,7 +205,6 @@ public class DBCon {
 
 	public List<Home> getSearchHome(String name) throws Exception {
 		String encryptName = security.encrypt(name);
-		System.out.println("encryptName : " + encryptName);
 		createConnecction();
 		java.sql.Statement stm = con.createStatement();
 		String sql = "Select * From home where Owner='" + encryptName + "'";

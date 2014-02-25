@@ -2,13 +2,19 @@ package com.kasun.windows.home;
 
 import com.kasun.daos.DBCon;
 import com.kasun.datas.Home;
+
 import java.util.List;
+
 import javax.swing.JOptionPane;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import javax.swing.table.DefaultTableModel;
+
 import com.kasun.windows.Selection;
 
+@SuppressWarnings("serial")
 public class SearchByOwner extends javax.swing.JFrame {
 
     private static final Logger log = LoggerFactory.getLogger(SearchByOwner.class);
@@ -17,7 +23,7 @@ public class SearchByOwner extends javax.swing.JFrame {
         initComponents();
     }
 
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings({ "unchecked" })
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -41,14 +47,16 @@ public class SearchByOwner extends javax.swing.JFrame {
                 "Home Num", "Owner", "Address", "TP_Num", "Num Of Members"
             }
         ) {
-            Class[] types = new Class [] {
+            @SuppressWarnings("rawtypes")
+			Class[] types = new Class [] {
                 java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
             };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false, false
             };
 
-            public Class getColumnClass(int columnIndex) {
+            @SuppressWarnings("rawtypes")
+			public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
 
